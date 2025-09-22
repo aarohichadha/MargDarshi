@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* MargDarshi Design System - Student-friendly, Professional, Growth-oriented */
+
+@layer base {
+  :root {
+    /* Background & Surface Colors - New Warm Palette */
+    --background: 71 30% 95%;  /* #FEFAE0 - Warm cream background */
+    --foreground: 33 25% 35%;  /* Dark brown for text */
+    --surface: 71 50% 96%;     /* #FEFAE0 lighter */
+    --surface-elevated: 66 35% 90%; /* #E9EDC9 - Sage elevated surface */
+
+    /* Brand Colors - Warm Earth Tones */
+    --primary: 71 25% 60%;     /* #CCD5AE - Sage green primary */
+    --primary-foreground: 33 25% 25%; /* Dark text on sage */
+    --primary-light: 71 25% 80%;
+    --primary-dark: 71 25% 40%;
+
+    /* Accent Colors - Warm Growth */
+    --accent-orange: 33 60% 65%; /* #D4A373 - Warm brown */
+    --accent-orange-foreground: 0 0% 100%;
+    --accent-green: 66 35% 75%;  /* #E9EDC9 - Light sage */
+    --accent-green-foreground: 33 25% 25%;
+
+    /* Secondary & Muted */
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 215 25% 25%;
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Semantic Colors */
+    --success: 142 76% 48%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 58%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Interactive Elements */
+    --border: 210 20% 88%;
+    --input: 210 20% 95%;
+    --ring: 213 82% 51%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(213 82% 51%), hsl(25 95% 58%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 15% 99%));
+    --gradient-accent: linear-gradient(90deg, hsl(25 95% 58%), hsl(142 76% 48%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(215 25% 15% / 0.08);
+    --shadow-md: 0 8px 24px hsl(215 25% 15% / 0.12);
+    --shadow-lg: 0 16px 40px hsl(215 25% 15% / 0.16);
+    --shadow-colored: 0 8px 32px hsl(213 82% 51% / 0.25);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 33 35% 12%;    /* Dark brown background */
+    --foreground: 71 30% 90%;    /* Light cream text */
+    --surface: 33 35% 15%;       /* Dark surface */
+    --surface-elevated: 33 35% 18%; /* Elevated dark surface */
+
+    --card: 33 35% 15%;
+    --card-foreground: 71 30% 90%;
+
+    --popover: 33 35% 15%;
+    --popover-foreground: 71 30% 90%;
+
+    --primary: 71 25% 70%;       /* Lighter sage for dark mode */
+    --primary-foreground: 33 35% 12%;
+    --primary-light: 71 25% 80%;
+    --primary-dark: 71 25% 50%;
+
+    --secondary: 33 25% 25%;
+    --secondary-foreground: 71 30% 90%;
+
+    --muted: 33 25% 20%;
+    --muted-foreground: 71 15% 70%;
+
+    --accent: 33 25% 20%;
+    --accent-foreground: 71 30% 90%;
+
+    --accent-orange: 33 60% 70%;  /* Lighter brown for dark mode */
+    --accent-orange-foreground: 33 35% 12%;
+    --accent-green: 66 35% 60%;   /* Darker sage for dark mode */
+    --accent-green-foreground: 33 35% 12%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 71 30% 90%;
+
+    --border: 33 25% 25%;
+    --input: 33 25% 25%;
+    --ring: 71 25% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-white transition-all duration-300;
+  }
+  
+  /* Card Variants */
+  .card-feature {
+    @apply bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transform hover:translate-y-[-4px] transition-all duration-300 border border-border;
+  }
+  
+  .card-testimonial {
+    @apply bg-gradient-to-br from-white to-surface-elevated p-6 rounded-2xl shadow-sm border border-border;
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent-orange bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-accent-green to-primary bg-clip-text text-transparent;
+  }
+  
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
